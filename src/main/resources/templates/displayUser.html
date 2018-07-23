@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display User Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Display User Form</h1>
+    <form action="#" th:action="@{/display}" th:object="${user}" method="post">
+        <p>username DISPLAY!!!!!: <input type="text" th:field="*{userName}" /></p>
+        <a href="/form">Login with another User Form</a><p></p>
+        <a href="/display">Display screen</a><p></p>
+        <a href="/statistics">Statistics screen</a>
+    </form>
+</body>
+</html>

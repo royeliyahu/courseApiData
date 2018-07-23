@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Statistics for User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Display User Form</h1>
+    <form action="#" th:action="@{/statistics}" th:object="${user}" method="post">
+        <!--<form action="#" th:action="@{/statistics}" th:object="${data}" method="post">-->
+        <!--<p>username statistics  User **  DISPLAY!!!!!:          <input type="text" th:field="*{userName}" /></p>-->
+        <!--<p>username statistics  User **  DISPLAY!!!!!    data : <input type="text" th:field="*{userName}" /></p>-->
+        <!--<p>username statistics  User **  DISPLAY!!!!!    data : <input type="text" th:field= data /></p>-->
+        <!--<p>username statistics  User **  DISPLAY!!!!!    data : <input type="text" th:field= "data" /></p>-->
+        <a href="/form">Login with another User Form</a><p></p>
+        <a href="/display">Display screen</a><p></p>
+        <a href="/statistics">Statistics screen</a>
+    </form>
+
+      <div>Web Application. Passed parameter : th:text="${message}"</div>
+
+    <!--<form action="listReferred"  th:action="@{/statistics}" th:object="${user}" method="get">-->
+        <!--<button name="yourButton in a form" value="[provide status id here]" input type="text" th:field="*{userName}" >GO TO LIST</button>-->
+    <!--</form>-->
+    <!--Add a name and value attribute to the button:-->
+
+    <button name="yourButton" value="[provide status id here]">GO TO LIST 2</button>
+
+    <div class = "container">
+        <div th:if="${not #lists.isEmpty(user)}">
+        <h2>Product list</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>id</th>
+                <th>desc</th>
+                <th>price</th>
+            </tr>
+            <tr th:each="product : ${user}">
+                <td th:text="${user.get(i).userName}"></td>
+                <td th:text="${user.get(i).firstHashtag}"></td>
+                <td th:text="${user.get(i).secondHashtag}"></td>
+            </tr>
+
+            <tr th:each="product : ${message}">
+                <td th:text="${message}"></td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+
+    <!--model.addAttribute("user", user);-->
+    <!--model.addAttribute("message", "my data");-->
+    <!--model.addAttribute("last10Twits", user.getLast10Twits().toArray());-->
+    <!--model.addAttribute("hashTagTweetCount", user.getHashTagTweetCount());-->
+    <!--String info = String.format("User display: userName = %s, firsHashtag = %s, secondHashtag = %s, thirdHashtag = %s",-->
+    <!--user.getUserName(), user.getFirstHashtag(), user.getSecondHashtag(), user.getThirdHashtag());-->
+
+
+
+    <!--<div class = "container">-->
+        <!--&lt;!&ndash;<div th: if="${not #list.ismpty(last10Twits)}">&ndash;&gt;-->
+            <!--<h2>last 10 Twits</h2>-->
+            <!--<table class="table table-striped">-->
+                <!--<tr>-->
+                    <!--<th>hashTag</th>-->
+                    <!--<th>tweet</th>-->
+                <!--</tr>-->
+                <!--<tr th:each="product : ${last10Twits.value}">-->
+                    <!--<td th:text="${last10Twits.value.hashTag}"></td>-->
+                    <!--<td th:text="${last10Twits.value.text}"></td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+
+
+    <!--<div class = "container">-->
+        <!--&lt;!&ndash;<div th: if="${not #list.ismpty(hashTagTweetCount)}">&ndash;&gt;-->
+        <!--<h2>hashTag Tweet Count</h2>-->
+        <!--<table class="table table-striped">-->
+            <!--<tr>-->
+                <!--<th>hashtag</th>-->
+                <!--<th>count</th>-->
+            <!--</tr>-->
+            <!--<tr th:each="product : ${hashTagTweetCount.value}">-->
+                <!--<td th:text="${hashTagTweetCount.value.hashtag)}"></td>-->
+                <!--<td th:text="${hashTagTweetCount.value.count)}"></td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</div>-->
+
+
+</body>
+</html>

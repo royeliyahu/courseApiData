@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<table style="width:30%">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+    </tr>
+</table>
+
+<form action="#" th:action="@{/statistics}" th:object="${user}" method="post">
+    <p>username: <input type="text" th:field="*{userName}" /></p>
+    <p><input type="submit" value="Submit" /> </p>
+</form>
+
+<a href="/form">Login with another User Form</a><p></p>
+<a href="/display">Display screen</a><p></p>
+</body>
+</html>
